@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AV 19 — Monturas y gafas de alta gama</title>
+<meta name="description" content="AV 19 — Catálogo de monturas y gafas de alta gama. Acetato, titanio y ediciones limitadas.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    '#171512',
+          paper:  '#F6F3EE',
+          bone:   '#EDE8DF',
+          rose:   '#C1447E',
+          rosed:  '#9E3566',
+          blush:  '#F7E3EC',
+          taupe:  '#8A8175',
+        },
+        fontFamily: {
+          serif: ['Fraunces', 'serif'],
+          sans: ['Manrope', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Manrope', sans-serif; background-color: #F6F3EE; color: #171512; }
+  h1, h2, h3, .font-display { font-family: 'Fraunces', serif; }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 2px solid #C1447E;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  .filter-pill { transition: background-color .15s ease, color .15s ease, border-color .15s ease; }
+  .filter-pill[aria-pressed="true"] { background-color: #171512; color: #F6F3EE; border-color: #171512; }
+
+  .product-card { transition: border-color .2s ease, transform .2s ease; }
+  .product-card:hover { border-color: #C1447E; transform: translateY(-2px); }
+
+  .swatch[aria-pressed="true"] { box-shadow: 0 0 0 2px #F6F3EE, 0 0 0 4px #C1447E; }
+
+  .reveal-hero { animation: rise .7s cubic-bezier(.22,.61,.36,1) both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+  #detailModal[data-open="true"] { display: flex; }
+  #detailModal { display: none; }
+
+  .banner-tile { background-size: cover; background-position: center; }
+</style>
+</head>
+
+<body class="antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="h-20 flex items-center gap-6">
+      <a href="#top" class="font-display text-2xl tracking-tight shrink-0">AV 19</a>
+      <nav class="hidden md:flex items-center gap-7 text-sm text-ink/70 ml-4">
+        <a href="#coleccion" class="hover:text-ink transition-colors">Colección</a>
+        <a href="#contacto" class="hover:text-ink transition-colors">Contacto</a>
+      </nav>
+      <div class="flex-1"></div>
+      <div class="relative w-full max-w-[320px]">
+        <label for="searchInput" class="sr-only">Buscar monturas por nombre o marca</label>
+        <input id="searchInput" type="search" placeholder="Buscar por nombre o marca…"
+          class="w-full bg-bone border border-ink/15 rounded-full py-2.5 pl-11 pr-4 text-sm placeholder:text-taupe focus:border-rose outline-none">
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-taupe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO fotográfico ============ -->
+<section id="top" class="relative h-[86vh] min-h-[560px] flex items-end">
+  <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=1600&auto=format&fit=crop"
+       alt="Modelo con gafas de sol AV 19" class="absolute inset-0 w-full h-full object-cover object-[center_25%]">
+  <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/15 to-transparent"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 pb-16 reveal-hero text-paper">
+    <p class="text-xs tracking-[0.15em] text-paper/80">MAISON · EYEWEAR</p>
+    <h1 class="font-display text-[2.4rem] leading-[1.08] sm:text-6xl sm:leading-[1.05] mt-3">
+      El sol, con<br>distinción.
+    </h1>
+    <p class="mt-5 text-paper/85 text-base sm:text-lg max-w-md leading-relaxed">
+      Monturas en acetato italiano y titanio, hechas para quienes prefieren no repetirse.
+    </p>
+    <a href="#coleccion" class="inline-flex items-center gap-2 bg-rose text-paper rounded-full px-7 py-3.5 text-sm mt-8 hover:bg-rosed transition-colors">
+      Ver colección
+    </a>
+  </div>
+</section>
+
+<!-- ============ BANNERS DE ACCESO RÁPIDO ============ -->
+<section class="grid sm:grid-cols-2">
+  <a href="#coleccion" data-scroll-category="Sol" class="banner-tile relative h-64 flex items-center justify-center group"
+     style="background-image:url('https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?q=80&w=1200&auto=format&fit=crop')">
+    <div class="absolute inset-0 bg-ink/55 group-hover:bg-ink/45 transition-colors"></div>
+    <span class="relative text-paper text-sm tracking-wide border-b border-paper/60 pb-1">Gafas de sol</span>
+  </a>
+  <a href="#coleccion" data-scroll-category="Óptico" class="banner-tile relative h-64 flex items-center justify-center group"
+     style="background-image:url('https://images.unsplash.com/photo-1508296695146-257a814070b4?q=80&w=1200&auto=format&fit=crop')">
+    <div class="absolute inset-0 bg-ink/55 group-hover:bg-ink/45 transition-colors"></div>
+    <span class="relative text-paper text-sm tracking-wide border-b border-paper/60 pb-1">Encuentra tu montura</span>
+  </a>
+</section>
+
+<!-- ============ FILTROS + COLECCIÓN ============ -->
+<section id="coleccion" class="max-w-7xl mx-auto px-5 sm:px-8 pt-16">
+  <p class="text-xs tracking-[0.1em] text-rose">SELECCIÓN AV 19</p>
+  <h2 class="font-display text-4xl sm:text-5xl mt-2">Más deseados</h2>
+
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-5 pb-8 pt-8 border-b border-ink/10">
+    <div class="flex flex-wrap gap-2" id="categoryFilters" role="group" aria-label="Filtrar por categoría"></div>
+    <div class="flex items-center gap-3">
+      <label for="brandFilter" class="text-sm text-taupe">Marca</label>
+      <select id="brandFilter" class="bg-bone border border-ink/15 rounded-full py-2 px-4 text-sm outline-none focus:border-rose">
+        <option value="todas">Todas las marcas</option>
+      </select>
+    </div>
+  </div>
+
+  <p class="text-sm text-taupe pt-6" id="resultsSummary" aria-live="polite"></p>
+
+  <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 py-10"></div>
+
+  <p id="emptyState" class="hidden text-center text-taupe py-16">
+    No encontramos monturas que coincidan con tu búsqueda. Prueba con otro nombre, marca o categoría.
+  </p>
+</section>
+
+<!-- ============ MODAL / FICHA DE PRODUCTO ============ -->
+<div id="detailModal" class="fixed inset-0 z-50 items-center justify-center bg-ink/60 px-4 py-8 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="bg-paper max-w-3xl w-full rounded-2xl border border-ink/10 p-6 sm:p-8 relative my-auto grid sm:grid-cols-2 gap-8">
+    <button id="modalClose" aria-label="Cerrar" class="absolute top-5 right-5 text-taupe hover:text-ink text-xl leading-none z-10">✕</button>
+
+    <div>
+      <div class="aspect-square rounded-xl overflow-hidden bg-bone">
+        <img id="modalMainImage" src="" alt="" class="w-full h-full object-cover">
+      </div>
+      <div class="flex gap-3 mt-3" id="modalThumbs"></div>
+    </div>
+
+    <div class="flex flex-col">
+      <p id="modalCategory" class="text-xs tracking-wide text-rose"></p>
+      <h3 id="modalTitle" class="font-display text-3xl mt-1"></h3>
+      <p id="modalRef" class="text-xs text-rose mt-1 font-semibold"></p>
+
+      <div class="mt-4 divide-y divide-ink/10 border-y border-ink/10 text-sm">
+        <div class="flex justify-between py-2.5"><span class="text-taupe">Forma</span><span id="modalForma"></span></div>
+        <div class="flex justify-between py-2.5"><span class="text-taupe">Tamaño</span><span id="modalTamano"></span></div>
+      </div>
+
+      <p class="text-sm text-taupe mt-4" id="modalColorsLabel"></p>
+      <div class="flex gap-2 mt-2" id="modalColors"></div>
+
+      <div class="flex flex-wrap gap-2 mt-4" id="modalTags"></div>
+
+      <p class="text-sm text-ink/80 mt-4 leading-relaxed" id="modalDesc"></p>
+
+      <div class="flex items-center justify-between mt-5">
+        <span id="modalPrice" class="font-display text-xl"></span>
+        <div class="flex items-center gap-3 border border-ink/15 rounded-full px-1">
+          <button id="qtyMinus" class="w-8 h-8 text-lg" aria-label="Restar cantidad">–</button>
+          <span id="qtyValue" class="text-sm w-4 text-center">1</span>
+          <button id="qtyPlus" class="w-8 h-8 text-lg" aria-label="Sumar cantidad">+</button>
+        </div>
+      </div>
+
+      <a id="modalWhatsapp" href="#" target="_blank" rel="noopener"
+         class="mt-5 inline-flex items-center justify-center gap-2 bg-rose text-paper rounded-full px-6 py-3.5 text-sm hover:bg-rosed transition-colors">
+        Pedir por WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BOTÓN FLOTANTE DE WHATSAPP ============ -->
+<a id="floatingWhatsapp" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"
+   class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-rose text-paper flex items-center justify-center shadow-lg hover:bg-rosed transition-colors">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.4-4A8 8 0 1112 20a8 8 0 01-4-1L4 20z"/></svg>
+</a>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contacto" class="border-t border-ink/10 mt-8">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+    <div>
+      <p class="font-display text-xl">AV 19</p>
+      <p class="text-sm text-taupe mt-3 leading-relaxed max-w-xs">Óptica de autor. Cada montura se ajusta y entrega de forma personalizada.</p>
+    </div>
+    <div>
+      <p class="text-sm text-ink/70 mb-3">Contacto</p>
+      <ul class="text-sm text-taupe space-y-2">
+        <li>hola@av19.com</li>
+        <li>+57 322 720 2206</li>
+        <li>Ciudad de México · Bogotá</li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-sm text-ink/70 mb-3">Síguenos</p>
+      <div class="flex gap-4 text-taupe">
+        <a href="#" aria-label="Instagram" class="hover:text-ink transition-colors">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <a href="#" aria-label="Pinterest" class="hover:text-ink transition-colors">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 17c1-3 1.5-6 1.5-8a3 3 0 116 0c0 2.5-1 5-3 5"/></svg>
+        </a>
+        <a href="#" aria-label="WhatsApp" class="hover:text-ink transition-colors">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.4-4A8 8 0 1112 20a8 8 0 01-4-1L4 20z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-ink/10 py-6 text-center text-xs text-taupe">© <span id="year"></span> AV 19. Todos los derechos reservados.</div>
+</footer>
+
+<script>
+/* =========================================================
+   CONFIGURACIÓN
+========================================================= */
+const CONFIG = {
+  whatsappNumber: "573227202206",
+  whatsappGenericMessage: "Hola, quiero información sobre el catálogo de AV 19.",
+  whatsappMessage: (product, qty, color) =>
+    `Hola, me interesa la montura "${product.name}" (${product.brand})` +
+    `${color ? ` en color ${color}` : ""}, cantidad: ${qty}. ¿Me confirman disponibilidad?`
+};
+
+/* =========================================================
+   PRODUCTOS — reemplaza imágenes, precios y textos por los tuyos
+========================================================= */
+const PRODUCTS = [
+  { id: 1, ref: "AV19-SOL-01", name: "Rive", brand: "Línea Sol", category: "Sol", price: 420000, badge: "Más deseada",
+    forma: "Cuadrada", tamano: "54 - 18 - 140",
+    colors: [{name:"Negro", hex:"#171512"}, {name:"Carey", hex:"#6B4A2E"}, {name:"Gris", hex:"#6B6E73"}],
+    tags: ["Acetato","Polarizada","UV400"],
+    images: ["https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=900&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1577803645773-f96470509666?q=80&w=900&auto=format&fit=crop"],
+    desc: "Montura de sol cuadrada en acetato negro mate, con lentes polarizados y bisagras reforzadas." },
+
+  { id: 2, ref: "AV19-OPT-02", name: "Alba", brand: "Línea Óptico", category: "Óptico", price: 380000,
+    forma: "Redonda", tamano: "48 - 20 - 140",
+    colors: [{name:"Havana", hex:"#8C6B3D"}, {name:"Negro", hex:"#171512"}],
+    tags: ["Acetato","Antirreflejo"],
+    images: ["https://images.unsplash.com/photo-1508296695146-257a814070b4?q=80&w=900&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1614715838608-73361bb1f9d3?q=80&w=900&auto=format&fit=crop"],
+    desc: "Montura óptica redonda inspirada en los archivos ópticos de los años 60, en acetato havana." },
+
+  { id: 3, ref: "AV19-TIT-03", name: "Distrito", brand: "Línea Titanio", category: "Titanio", price: 560000,
+    forma: "Aviador", tamano: "58 - 15 - 145",
+    colors: [{name:"Oro", hex:"#A9824C"}, {name:"Gunmetal", hex:"#4A4C50"}],
+    tags: ["Titanio","UV400","Ligera"],
+    images: ["https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?q=80&w=900&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?q=80&w=900&auto=format&fit=crop"],
+    desc: "Aviador clásico en titanio quirúrgico con lentes degradadas hechas a medida." },
+
+  { id: 4, ref: "AV19-SOL-04", name: "Sabana", brand: "Línea Sol", category: "Sol", price: 450000,
+    forma: "Mariposa", tamano: "55 - 17 - 140",
+    colors: [{name:"Crema", hex:"#EDE3D0"}, {name:"Negro", hex:"#171512"}],
+    tags: ["Acetato","Polarizada"],
+    images: ["https://images.unsplash.com/photo-1508296695146-257a814070b4?q=80&w=900&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=900&auto=format&fit=crop"],
+    desc: "Silueta mariposa en acetato crema, herrajes finos y lentes con protección total UV." },
+
+  { id: 5, ref: "AV19-SOL-05", name: "Nocturna", brand: "Línea Sol", category: "Sol", price: 480000, badge: "Más deseada",
+    forma: "Wrap", tamano: "56 - 16 - 142",
+    colors: [{name:"Negro", hex:"#171512"}, {name:"Carey", hex:"#6B4A2E"}],
+    tags: ["Acetato","Polarizada","UV400"],
+    images: ["https://images.unsplash.com/photo-1556306535-0f09a537f0a3?q=80&w=900&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=900&auto=format&fit=crop"],
+    desc: "Montura envolvente de perfil deportivo, pensada para uso urbano y al aire libre." },
+
+  { id: 6, ref: "AV19-OPT-06", name: "Retiro", brand: "Línea Óptico", category: "Óptico", price: 360000,
+    forma: "Cuadrada", tamano: "52 - 19 - 140",
+    colors: [{name:"Havana", hex:"#8C6B3D"}, {name:"Negro", hex:"#171512"}],
+    tags: ["Acetato","Antirreflejo"],
+    images: ["https://images.unsplash.com/photo-1585386959984-a4155224a1ad?q=80&w=900&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=900&auto=format&fit=crop"],
+    desc: "Montura óptica de perfil fino en acetato havana translúcido, uso diario." },
+
+  { id: 7, ref: "AV19-ED-07", name: "Aurora", brand: "AV 19 Atelier", category: "Edición limitada", price: 890000,
+    forma: "Ojo de gato", tamano: "53 - 17 - 140",
+    colors: [{name:"Mármol", hex:"#C9C2B4"}, {name:"Negro", hex:"#171512"}],
+    tags: ["Acetato","Numerada"],
+    images: ["https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=900&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=900&auto=format&fit=crop"],
+    desc: "Pieza numerada de tirada corta, acetato veteado y remaches de titanio." },
+
+  { id: 8, ref: "AV19-TIT-08", name: "Cristal", brand: "Línea Titanio", category: "Titanio", price: 510000,
+    forma: "Redonda", tamano: "49 - 21 - 140",
+    colors: [{name:"Plata", hex:"#C7C9CC"}, {name:"Oro", hex:"#A9824C"}],
+    tags: ["Titanio","Ligera","UV400"],
+    images: ["https://images.unsplash.com/photo-1585386959984-a4155224a1ad?q=80&w=900&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?q=80&w=900&auto=format&fit=crop"],
+    desc: "Redonda en titanio cepillado, la pieza más ligera de la colección." },
+];
+
+const state = { category: "todas", brand: "todas", query: "" };
+
+const grid = document.getElementById("productGrid");
+const emptyState = document.getElementById("emptyState");
+const resultsSummary = document.getElementById("resultsSummary");
+const categoryFiltersEl = document.getElementById("categoryFilters");
+const brandFilterEl = document.getElementById("brandFilter");
+const searchInput = document.getElementById("searchInput");
+
+const money = (n) => n.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 });
+
+function buildFilterOptions() {
+  const categories = ["todas", ...new Set(PRODUCTS.map(p => p.category))];
+  categoryFiltersEl.innerHTML = categories.map(cat => `
+    <button type="button" class="filter-pill border border-ink/15 rounded-full px-4 py-2 text-sm"
+      data-category="${cat}" aria-pressed="${cat === 'todas'}">${cat === 'todas' ? 'Todas' : cat}</button>
+  `).join("");
+
+  const brands = [...new Set(PRODUCTS.map(p => p.brand))].sort();
+  brandFilterEl.innerHTML = `<option value="todas">Todas las marcas</option>` +
+    brands.map(b => `<option value="${b}">${b}</option>`).join("");
+}
+
+function matches(product) {
+  const q = state.query.trim().toLowerCase();
+  const inCategory = state.category === "todas" || product.category === state.category;
+  const inBrand = state.brand === "todas" || product.brand === state.brand;
+  const inQuery = !q || product.name.toLowerCase().includes(q) || product.brand.toLowerCase().includes(q);
+  return inCategory && inBrand && inQuery;
+}
+
+function render() {
+  const results = PRODUCTS.filter(matches);
+
+  grid.innerHTML = results.map(p => `
+    <article class="product-card border border-ink/10 rounded-xl overflow-hidden bg-white/40">
+      <div class="relative aspect-[4/3] overflow-hidden bg-bone">
+        ${p.badge ? `<span class="absolute top-3 left-3 bg-rose text-paper text-[11px] tracking-wide rounded px-2 py-1">${p.badge}</span>` : ""}
+        <img src="${p.images[0]}" alt="Montura ${p.name} de ${p.brand}" loading="lazy" class="w-full h-full object-cover">
+      </div>
+      <div class="p-5">
+        <p class="text-xs text-rose">${p.category}</p>
+        <h3 class="font-display text-lg mt-1">${p.name}</h3>
+        <p class="text-sm text-taupe">${p.brand}</p>
+        <div class="flex items-center justify-between mt-4">
+          <span class="font-display text-base">${money(p.price)}</span>
+          <button class="text-sm border border-ink/20 rounded-full px-4 py-2 hover:border-ink transition-colors" data-detail="${p.id}">Ver detalles</button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+
+  emptyState.classList.toggle("hidden", results.length > 0);
+  resultsSummary.textContent = `${results.length} ${results.length === 1 ? "montura encontrada" : "monturas encontradas"}`;
+}
+
+categoryFiltersEl.addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-category]");
+  if (!btn) return;
+  state.category = btn.dataset.category;
+  [...categoryFiltersEl.children].forEach(b => b.setAttribute("aria-pressed", b === btn));
+  render();
+});
+
+brandFilterEl.addEventListener("change", (e) => { state.brand = e.target.value; render(); });
+searchInput.addEventListener("input", (e) => { state.query = e.target.value; render(); });
+
+document.querySelectorAll("[data-scroll-category]").forEach(el => {
+  el.addEventListener("click", (e) => {
+    const cat = el.dataset.scrollCategory;
+    const btn = categoryFiltersEl.querySelector(`[data-category="${cat}"]`);
+    if (btn) {
+      e.preventDefault();
+      state.category = cat;
+      [...categoryFiltersEl.children].forEach(b => b.setAttribute("aria-pressed", b === btn));
+      render();
+      document.getElementById("coleccion").scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+/* ---- Modal / ficha de producto ---- */
+const modal = document.getElementById("detailModal");
+let currentProduct = null, currentQty = 1, currentColor = null;
+
+function openModal(product) {
+  currentProduct = product; currentQty = 1; currentColor = product.colors[0]?.name || null;
+
+  document.getElementById("modalCategory").textContent = product.category;
+  document.getElementById("modalTitle").textContent = product.name;
+  document.getElementById("modalRef").textContent = `REF. ${product.ref}`;
+  document.getElementById("modalForma").textContent = product.forma;
+  document.getElementById("modalTamano").textContent = product.tamano;
+  document.getElementById("modalDesc").textContent = product.desc;
+  document.getElementById("modalPrice").textContent = money(product.price);
+  document.getElementById("qtyValue").textContent = currentQty;
+  document.getElementById("modalMainImage").src = product.images[0];
+  document.getElementById("modalMainImage").alt = `Montura ${product.name}`;
+
+  document.getElementById("modalThumbs").innerHTML = product.images.map((img, i) => `
+    <button class="w-16 h-16 rounded-lg overflow-hidden border ${i===0 ? 'border-rose' : 'border-ink/15'}" data-thumb="${img}">
+      <img src="${img}" class="w-full h-full object-cover" alt="Vista ${i+1} de ${product.name}">
+    </button>
+  `).join("");
+
+  document.getElementById("modalColorsLabel").textContent = `${product.colors.length} colores disponibles`;
+  document.getElementById("modalColors").innerHTML = product.colors.map((c, i) => `
+    <button class="swatch w-8 h-8 rounded-full border-2 border-paper" style="background:${c.hex}"
+      data-color="${c.name}" aria-pressed="${i===0}" aria-label="${c.name}"></button>
+  `).join("");
+
+  document.getElementById("modalTags").innerHTML = product.tags.map(t =>
+    `<span class="text-xs bg-blush text-rosed rounded px-2.5 py-1">${t}</span>`).join("");
+
+  updateWhatsappLink();
+  modal.dataset.open = "true";
+}
+
+function updateWhatsappLink() {
+  if (!currentProduct) return;
+  const text = encodeURIComponent(CONFIG.whatsappMessage(currentProduct, currentQty, currentColor));
+  document.getElementById("modalWhatsapp").href = `https://wa.me/${CONFIG.whatsappNumber}?text=${text}`;
+}
+
+grid.addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-detail]");
+  if (!btn) return;
+  const product = PRODUCTS.find(p => p.id === Number(btn.dataset.detail));
+  if (product) openModal(product);
+});
+
+document.getElementById("modalThumbs").addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-thumb]");
+  if (!btn) return;
+  document.getElementById("modalMainImage").src = btn.dataset.thumb;
+  [...document.getElementById("modalThumbs").children].forEach(b =>
+    b.classList.toggle("border-rose", b === btn) || b.classList.toggle("border-ink/15", b !== btn));
+});
+
+document.getElementById("modalColors").addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-color]");
+  if (!btn) return;
+  currentColor = btn.dataset.color;
+  [...document.getElementById("modalColors").children].forEach(b => b.setAttribute("aria-pressed", b === btn));
+  updateWhatsappLink();
+});
+
+document.getElementById("qtyPlus").addEventListener("click", () => {
+  currentQty += 1; document.getElementById("qtyValue").textContent = currentQty; updateWhatsappLink();
+});
+document.getElementById("qtyMinus").addEventListener("click", () => {
+  currentQty = Math.max(1, currentQty - 1); document.getElementById("qtyValue").textContent = currentQty; updateWhatsappLink();
+});
+
+document.getElementById("modalClose").addEventListener("click", () => modal.dataset.open = "false");
+modal.addEventListener("click", (e) => { if (e.target === modal) modal.dataset.open = "false"; });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") modal.dataset.open = "false"; });
+
+/* ---- WhatsApp flotante (mensaje genérico) ---- */
+document.getElementById("floatingWhatsapp").href =
+  `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(CONFIG.whatsappGenericMessage)}`;
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+buildFilterOptions();
+render();
+</script>
+
+</body>
+</html>
